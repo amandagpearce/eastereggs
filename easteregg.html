@@ -20,15 +20,15 @@ html, body {
 }
 
 .ap-container {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    -moz-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    transform: scaleX(-1);
-    -ms-filter: fliph; /*IE*/
-    filter: fliph; /*IE*/
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -ms-filter: fliph; /*IE*/
+  filter: fliph; /*IE*/
 }
 
 .shark-ap-wrapper {
@@ -38,20 +38,22 @@ html, body {
   position: relative; 
   border-radius: 100%;
 }
+
 #shark > div {
   position: absolute;
   box-sizing: border-box;
 }
-.shark-eye {
+
+.eye {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: black;
-  top: 10px;
-  right: 28px;
+  top: 7px;
+  right: 22px;
 }
 
-.aleta, .tail, .fin {
+.arm, .tail, .fin {
   width: 70px;
   height: 50px;
   box-shadow: 4vmin -0.5vmin #d3d3d3;
@@ -60,7 +62,7 @@ html, body {
   transform: translate(-130%, -3vmin) rotate(9deg);
 }
 
-.aleta {
+.arm {
   box-shadow: 5vmin 0vmin #d3d3d3;
   top: 28%;
   right: 66%;
@@ -85,34 +87,34 @@ html, body {
 .gill-2 {
   transform: translate(-1vmin, 0) scale(0.9);
 }
-.shark-tooth {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 6px 6px 0 4px;
-    border-color: #ffffff transparent transparent transparent;
-    /* animation: growTeeth ease-in-out 6s infinite;  */
+
+.tooth {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 6px 0 4px;
+  border-color: #ffffff transparent transparent transparent;
 }
 
 .top-teeth {
-    width: 30px;
-    height: 20px;
-    display: flex;
-    z-index: 999;
-    left: 70%;
-    top: 47%;
-    transform: rotate(23deg);
-    animation: showTeethTop ease-in-out 6s infinite;
+  width: 30px;
+  height: 20px;
+  display: flex;
+  z-index: 999;
+  left: 70%;
+  top: 47%;
+  transform: rotate(23deg);
+  animation: showTeethTop ease-in-out 6s infinite;
 }
 .bottom-teeth {
-    width: 20px;
-    height: 20px;
-    display: flex;
-    z-index: 999;
-    left: 77%;
-    top: 30%;
-    transform: rotate(-137deg);
-    animation: showTeethBottom ease-in-out 6s infinite; 
+  width: 20px;
+  height: 20px;
+  display: flex;
+  z-index: 999;
+  left: 77%;
+  top: 30%;
+  transform: rotate(-137deg);
+  animation: showTeethBottom ease-in-out 6s infinite; 
 }
 
 .shark-body {
@@ -121,11 +123,7 @@ html, body {
   height: 122px;
   border-radius: 50%;
   transform: translate(0, -50%);
-  /* clip-path: polygon(0% 50%, 100% 50%, 100% 80%, 70% 69%, 90% 132%, 0% 100%); */
-  /* clip-path: polygon(0% 50%, 100% 50%, 100% 78%, 70% 68%, 83% 211%, 0% 100%); */
-
-
-  clip-path: polygon(0% 50%, 100% 50%, 100% 90%, 70% 70%, 90% 100%, 0% 100%);
+  clip-path: polygon(0% 50%, 100% 39%, 100% 90%, 70% 70%, 90% 100%, 0% 100%);
   background: #d3d3d3;
   animation: openMouth ease-in-out 6s infinite;  
 }
@@ -137,20 +135,7 @@ html, body {
   left: 58%;
   top: 55%;
   transform: translate(-50%, -50%);
-
-  /* top: -30%;
-  transform: rotate(-25deg); */
-  
   animation: jump ease-in-out 6s infinite; 
-}
-
-@keyframes growTeeth {
-   75% {
-    border-width: 12px 5px 0 4px;
-  }
-  100% {
-    border-width: 15px 5px 0 4px;
-  }
 }
 
 @keyframes jump {
@@ -196,10 +181,10 @@ html, body {
 
     }
     75% {
-        clip-path: polygon(0% 50%, 100% 50%, 100% 80%, 70% 69%, 90% 132%, 0% 100%);
+        clip-path: polygon(0% 50%, 100% 39%, 100% 80%, 70% 69%, 90% 132%, 0% 100%);
     }
     100% {
-        clip-path: polygon(0% 50%, 100% 50%, 100% 78%, 70% 68%, 83% 211%, 0% 100%);
+        clip-path: polygon(0% 50%, 100% 39%, 100% 78%, 70% 68%, 83% 211%, 0% 100%);
     }
 }
 
@@ -237,23 +222,31 @@ html, body {
 <div class="ap-container">
     <div class="shark-ap-wrapper">
         <div id="shark">
-        <div class="top-teeth">
-            <div class="shark-tooth"></div>
-            <div class="shark-tooth"></div>
-            <div class="shark-tooth"></div>
-        </div>
-        <div class="bottom-teeth">
-            <div class="shark-tooth"></div>
-            <div class="shark-tooth"></div>
-        </div>
-        <div class="shark-tooth"></div>
-        <div class="shark-body"></div>
-        <div class="shark-eye"></div>
-        <div class="aleta"></div>
-        <div class="tail"></div>
-        <div class="fin"></div>
-        <div class="gill gill-1"></div>
-        <div class="gill gill-2"></div>
+        
+          <div class="shark-body"></div>
+          
+          <div class="top-teeth">
+            <div class="tooth"></div>
+            <div class="tooth"></div>
+            <div class="tooth"></div>
+          </div>
+          
+          <div class="bottom-teeth">
+              <div class="tooth"></div>
+              <div class="tooth"></div>
+          </div>
+          
+          <div class="eye"></div>
+          
+          <div class="arm"></div>
+          
+          <div class="tail"></div>
+          
+          <div class="fin"></div>
+          
+          <div class="gill gill-1"></div>
+          
+          <div class="gill gill-2"></div>
         </div>      
     </div>
 </div>
